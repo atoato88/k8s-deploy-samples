@@ -1,3 +1,4 @@
+# This yaml based on https://opentelemetry.io/docs/collector/getting-started/#getting-started
 version: "2"
 services:
 
@@ -8,12 +9,6 @@ services:
       - "16686:16686"
       - "14268"
       - "14250"
-
-        #  # Zipkin
-        #  zipkin-all-in-one:
-        #    image: openzipkin/zipkin:latest
-        #    ports:
-        #      - "9411:9411"
 
   # Collector
   otel-collector:
@@ -30,33 +25,3 @@ services:
       - "55670:55679" # zpages extension
     depends_on:
       - jaeger-all-in-one
-        #      - zipkin-all-in-one
-
-        #  demo-client:
-        #    build:
-        #      dockerfile: $PWD/client/Dockerfile
-        #      context: ./client
-        #    environment:
-        #      - OTEL_EXPORTER_OTLP_ENDPOINT=otel-collector:4317
-        #      - DEMO_SERVER_ENDPOINT=http://demo-server:7080/hello
-        #    depends_on:
-        #      - demo-server
-        #
-        #  demo-server:
-        #    build:
-        #      dockerfile: $PWD/server/Dockerfile
-        #      context: ./server
-        #    environment:
-        #      - OTEL_EXPORTER_OTLP_ENDPOINT=otel-collector:4317
-        #    ports:
-        #      - "7080"
-        #    depends_on:
-        #      - otel-collector
-        #
-        #  prometheus:
-        #    container_name: prometheus
-        #    image: prom/prometheus:latest
-        #    volumes:
-        #      - ./prometheus.yaml:/etc/prometheus/prometheus.yml
-        #    ports:
-        #      - "9090:9090"
