@@ -14,10 +14,11 @@ Please see [descriptions(keyword: APIServerTracing)](https://github.com/kubernet
 # Usage
 
 ## Run
+
+- Up cluster
 ```
 IP=<IP addres of host machine> make run
 ```
-
 - Check k8s cluster up
 ```
 kubectl get nodes
