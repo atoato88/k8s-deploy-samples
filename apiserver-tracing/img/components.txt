@@ -1,0 +1,14 @@
+@startuml
+card HostMachine {
+  card kubernetes {
+    card kube_apiserver
+    card other_components
+  }
+  card "opentelemetry_collector\nlistening on <Host IP>:4317" as otel
+  card jaeger_UI
+}
+actor You
+kube_apiserver --> otel : transfer tracing data to <HOST IP>:4317
+otel --> jaeger_UI : transfer tracing data
+You ..> jaeger_UI : access to \n"http://0.0.0.0:16686" \nby browser
+@enduml
