@@ -33,6 +33,6 @@ make stop
 
 # System Components Layout
 
-![](http:www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/atoato88/k8s-deploy-samples/main/apiserver-tracing/img/components.txt)
+![](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/atoato88/k8s-deploy-samples/main/apiserver-tracing/img/components.txt)
 
 
