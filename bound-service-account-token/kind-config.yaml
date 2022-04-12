@@ -1,0 +1,23 @@
+# BoundServiceAccountTokenVolume feature-gate is GA from v1.22 and also v1.23 cluster.
+# You can not disable this feature-gate.
+# ref: https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/#feature-gates
+
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+name: v1.23-cluster
+nodes:
+- role: control-plane
+  image: kindest/node:v1.23.5
+  #kubeadmConfigPatches:
+  #  - |
+  #    apiVersion: kubeadm.k8s.io/v1beta3
+  #    kind: ClusterConfiguration
+  #    apiServer:
+  #      extraArgs:
+  #        "feature-gates": "BoundServiceAccountTokenVolume=true"
+  #        "service-account-issuer": "https://kubernetes.default.svc.cluster.local"
+  #        "service-account-key-file": "/etc/kubernetes/pki/sa.pub"
+  #        "service-account-signing-key-file": "/etc/kubernetes/pki/sa.key "
+  #    controllerManager:
+  #      extraArgs:
+  #        "feature-gates": "BoundServiceAccountTokenVolume=true"
